@@ -1,4 +1,8 @@
-//图片上传预览    IE是用了滤镜。  
+/*
+ * 作者：xxzkid
+ * 时间：2015-10-29
+ * 描述：图片上传预览    IE是用了滤镜。
+ */
 function previewImage(file) {
 	var div = document.getElementById('previmage');
 	var oldimg = div.firstChild;

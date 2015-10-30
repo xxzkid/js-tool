@@ -1,3 +1,8 @@
+/*
+ * 作者：xxzkid
+ * 时间：2015-10-29
+ * 描述：消息框
+ */
 var msg = {
 
 	rect: function() {
