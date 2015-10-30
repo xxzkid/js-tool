@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>工具类</title>
-		<script src="js/previmage.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" href="css/msg.css"/>
-		<link rel="stylesheet" type="text/css" href="css/test.css"/>
-		<script type="text/javascript">
-			function confirm () {
-				msg.confirm('title', 'msg', function(b){
-					if(b) {
-						msg.alert('title', "OK");
-					} else {
-						msg.alert("title", "CANCEL");
-					}
-				});
-			}
-		</script>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/msg.css" />
+		<link rel="stylesheet" type="text/css" href="css/test.css" />
 	</head>
 
 	<body>
@@ -33,24 +21,68 @@
 			<input type="file" onchange="previewImage(this);" />
 			<div id="previmage"><img src="img/default.jpg" style="width: 200px; height: 200px;" /></div>
 		</div>
-		
+
 		<!--
         	作者：xxzkid
         	时间：2015-10-29
         	描述：alert
         -->
-        <div class="test">
-        	<input type="button" value="msg.alert" onclick="msg.alert('title', 'msg')" />
-        </div>
-		
+		<div class="test">
+			<input type="button" value="msg.alert" onclick="msg.alert('title', 'msg')" />
+		</div>
+
 		<!--
         	作者：xxzkid
         	时间：2015-10-29
         	描述：confirm
         -->
-        <div class="test">
-        	<input type="button" value="msg.confirm" onclick="confirm();" />
-        </div>
+		<div class="test">
+			<input type="button" value="msg.confirm" onclick="confirm();" />
+		</div>
+
+		<!--
+        	作者：xxzkid
+        	时间：2015-10-30
+        	描述：ajax文件上传
+        -->
+		<div class="test">
+			<input type="file" name="pic" id="pic" onchange="picup(this)" />
+		</div>
 		
+		
+		
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/previmage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function confirm() {
+				msg.confirm('title', 'msg', function(b) {
+					if (b) {
+						msg.alert('title', "OK");
+					} else {
+						msg.alert("title", "CANCEL");
+					}
+				});
+			}
+
+			/**
+			 * 修改上传url地址
+			 * @param {Object} obj
+			 */
+			function picup(obj) {
+				var url = "/";
+				$.ajaxFileUpload({
+					url: url,
+					secureuri: false,
+					dataType: 'json',
+					type: "POST",
+					fileElementId: obj.id,
+					success: function(data, status) {
+						
+					}
+				});
+			}
+		</script>
 	</body>
+
 </html>
