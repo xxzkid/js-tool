@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>工具类</title>
+		<script src="js/previmage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/msg.css"/>
+		<link rel="stylesheet" type="text/css" href="css/test.css"/>
+		<script type="text/javascript">
+			function ck () {
+				msg.confirm('title', 'msg', function(b){
+					if(b) {
+						msg.alert('title', "OK");
+					} else {
+						msg.alert("title", "CANCEL");
+					}
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<p class="test">By xxzkid</p>
+		<!--
+        	作者：xxzkid
+        	时间：2015-10-29
+        	描述：图片预览
+        	PS:#previmage > img 的 width and height 一定要写在img标签上 否则js获取不到宽高
+        -->
+		<div class="test">
+			<input type="file" onchange="previewImage(this);" />
+			<div id="previmage"><img src="img/default.jpg" style="width: 200px; height: 200px;" /></div>
+		</div>
+		
+		<!--
+        	作者：xxzkid
+        	时间：2015-10-29
+        	描述：alert
+        -->
+        <div class="test">
+        	<input type="button" value="msg.alert" onclick="msg.alert('title', 'msg')" />
+        </div>
+		
+		<!--
+        	作者：xxzkid
+        	时间：2015-10-29
+        	描述：confirm
+        -->
+        <div class="test">
+        	<input type="button" value="msg.confirm" onclick="ck();" />
+        </div>
+		
+	</body>
+</html>
