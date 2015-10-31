@@ -49,11 +49,20 @@
 			<input type="file" name="pic" id="pic" onchange="picup(this)" />
 		</div>
 		
+		<!--
+        	作者：xxzkid
+        	时间：2015-10-31
+        	描述：ajax封装测试
+        -->
+        <div class="test">
+        	<input type="button" id="ajax" value="ajax" onclick="testajax()"/>
+        </div>
 		
 		
 		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/previmage.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			function confirm() {
 				msg.confirm('title', 'msg', function(b) {
@@ -80,6 +89,14 @@
 					success: function(data, status) {
 						
 					}
+				});
+			}
+			
+			function testajax () {
+				ajax()//
+				.get('http://localhost:8080/Web3.0/ServletDemo')
+				.success(function(data){
+					msg.alert('title', data);
 				});
 			}
 		</script>
