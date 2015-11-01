@@ -77,7 +77,7 @@ var msg = {
 		document.body.appendChild(div);
 	},
 
-	confirm: function(title, msg, fn) {
+	confirm: function(title, msg, callback) {
 		this.openlayer();
 		var rect = this.rect();
 		var div = document.createElement("div");
@@ -146,7 +146,9 @@ var msg = {
 		okdiv.addEventListener("click", function(){
 			document.getElementById("xxxxlayer").remove();
 			document.getElementById("xxxxconfirm").remove();
-			fn(true);
+			if(typeof(callback) === 'function'){
+				callback(true);
+			}
 		});
 		
 		var canceldiv = document.createElement("div");
@@ -160,9 +162,10 @@ var msg = {
 		canceldiv.addEventListener("click", function(){
 			document.getElementById("xxxxlayer").remove();
 			document.getElementById("xxxxconfirm").remove();
-			fn(false);
+			if(typeof(callback) === 'function'){
+				callback(false);
+			}
 		});
-		
 
 		document.body.appendChild(div);
 	},

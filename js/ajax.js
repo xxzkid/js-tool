@@ -35,6 +35,7 @@
 		 */
 		_obj.header = function(name, value) {
 			_obj.xhr.setRequestHeader(name, value);
+			return _obj;
 		};
 
 		/**
@@ -132,6 +133,7 @@
 
 		_obj.abort = function() {
 			_obj.xhr.abort();
+			return _obj;
 		};
 
 		return _obj;

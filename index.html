@@ -60,6 +60,7 @@
 		
 		
 		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/previmage.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
@@ -79,7 +80,7 @@
 			 * @param {Object} obj
 			 */
 			function picup(obj) {
-				var url = "/";
+				var url = "http://localhost:8080/Web3.0/ServletDemo";
 				$.ajaxFileUpload({
 					url: url,
 					secureuri: false,
@@ -87,7 +88,7 @@
 					type: "POST",
 					fileElementId: obj.id,
 					success: function(data, status) {
-						
+						alert(data);
 					}
 				});
 			}
