@@ -57,6 +57,15 @@
         <div class="test">
         	<input type="button" id="ajax" value="ajax" onclick="testajax()"/>
         </div>
+        
+        <!--
+        	作者：xxzkid
+        	时间：2015-11-04
+        	描述：身份证验证
+        -->
+        <div class="test">
+        	<input type="text" value="51052119850508797X" onblur="testidcard(this.value);"/>
+        </div>
 		
 		
 		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
@@ -64,6 +73,7 @@
 		<script src="js/previmage.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/msg.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/IDCard.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			function confirm() {
 				msg.confirm('title', 'msg', function(b) {
@@ -99,6 +109,11 @@
 				.success(function(data){
 					msg.alert('title', data);
 				});
+			}
+			
+			function testidcard(value) {
+				var b = IDCard.checkIDCard(value);
+				alert(b);
 			}
 		</script>
 	</body>

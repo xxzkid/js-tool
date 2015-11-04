@@ -115,7 +115,9 @@
 			return card;
 		},
 
-		// 给外部调用的方法 var b = IDCard.checkIDCard(card);
+		/**
+		 * 给外部调用的方法 var b = IDCard.checkIDCard(card);
+		 */
 		checkIDCard: function(card) {
 			var b = this.isCardNo(card);
 			if (!b) return b;
