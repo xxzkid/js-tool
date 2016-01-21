@@ -2,7 +2,7 @@
     /**
      * 排序
      * @param {Object} obj 对象或数组
-     * @param {Function} [compareFunction] 比较的方法 只有obj为Array时才会使用
+     * @param {Function} [compareFunction] 比较的方法
      */
     window.ksort = function(obj, compareFunction) {
         if(Object.prototype.toString.call(obj) === '[object Object]') {
