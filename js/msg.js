@@ -22,7 +22,6 @@
 			var div = document.createElement("div");
 			div.id = "xxxxlayer";
 			var r = rect();
-			console.log(r);
 			div.style.width = r.width + "px";
 			div.style.height = r.height + "px";
 			div.style.position = "absolute";
