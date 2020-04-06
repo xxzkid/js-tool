@@ -9,5 +9,5 @@ js-tool
 -----------------------------------
 
 ### blog
-1.[xxzkid blog] (http://blog.xxzkid.tk)
+1.[xxzkid blog](http://uyiplus.com)
 
